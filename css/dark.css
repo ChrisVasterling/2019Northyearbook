@@ -1,0 +1,70 @@
+/*Visual Styles for a dark theme*/
+body {
+    background-color: rgb(75, 75, 75);
+}
+button:hover, .buttonSelected {
+    box-shadow: 0px 0px 5px 1px rgb(25, 25, 25);
+}
+hr {
+    background-color: rgb(0, 119, 200);
+}
+.top {
+    box-shadow: 0px 10px 15px -5px rgb(25, 25, 25);
+}
+.topText {
+    background-color: rgba(25, 25, 25, .75);
+    box-shadow: 0px 0px 25px -5px rgb(25, 25, 25);
+}
+#topText {
+    color: rgb(200, 200, 200);
+}
+
+.seasonTitle {
+    border-bottom: 2px solid rgb(0, 119, 200);
+}
+.seasonTitleText {
+    color: rgb(200, 200, 200)
+}
+.seasonPreview {
+    box-shadow: -5px 0px 10px -5px rgb(0, 0, 0);
+}
+.seasonPreviewBtns {
+    background-color: rgba(0, 119, 200, .75);
+    box-shadow: 0px -5px 10px -5px rgb(25, 25, 25);
+}
+.seasonPreviewBtn {
+    background-color: rgb(200, 200, 200);
+    color: rgb(25, 25, 25);
+}
+.seasonPreviewBtn > hr {
+    background-color: rgb(0, 119, 200);
+}
+
+.seasonSectionRowItem {
+    box-shadow: 0px 0px 25px -5px rgb(25, 25, 25);
+}
+.seasonSectionRowItem:hover, .seasonSectionRowItemSelected {
+    box-shadow: 0px 0px 15px 0px rgb(25, 25, 25);
+}
+.seasonSectionRowItemSelected {
+    box-shadow: 0px 0px 5px 0px rgb(25, 25, 25) !important;
+}
+.seasonSectionRowItemBK {
+    background-color: rgb(100, 100, 100);
+}
+.seasonSectionRowItemNameBanner {
+    background-color: rgba(25, 25, 25, .75);
+    box-shadow: 0px 0px 15px 0px rgb(25, 25, 25);
+}
+.seasonSectionRowItemName {
+    color: rgb(225, 225, 225);
+}
+
+@media screen and (max-width: 1300px) {
+    .seasonPreview:nth-child(1) {
+        box-shadow: 0px 0px 15px -5px rgb(0, 0, 0);
+    }
+    .seasonPreview:nth-child(2) {
+        box-shadow: 5px 0px 10px -5px rgb(0, 0, 0);
+    }
+}

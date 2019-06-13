@@ -1,1 +1,156 @@
-﻿🏌️‍♀️
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <title>2019 North Yearbook</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#0077c8">
+        
+        <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/light.css" id="cssTheme">
+        <link rel="icon" href="media/icon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Quicksand&amp;display=swap" rel="stylesheet">
+        
+        <script src="js/main.js"></script>
+        <script src="js/home.js"></script>
+        <script src="js/search_list.js"></script>
+        <script>
+            var pageName = "2019 North Yearbook";
+            var distanceFromHome = "";
+            var randomImages = [
+                "media/background1.jpg"
+            ]
+        </script>
+    </head>
+    <body>
+        
+        <!--Temporary-->
+        <button onclick="toggleTheme()" style="position: fixed; z-index: 1000;">
+            Toggle Light/Dark
+        </button>
+        
+        <div class="top">
+            <div class="topImg" id="topImg" style=""></div>
+            <div class="topText" id="topTextCont">
+                <span id="topText"></span>
+            </div>
+        </div>        
+        <br/><hr/><br/>
+        <div class="content">
+            <div class="season" id="season_fall">
+                <div class="seasonTitle">
+                    <span class="seasonTitleText">Fall</span>
+                </div>
+                <div class="seasonContent">
+                    <div class="seasonPreviews">
+                        <!--must randomly assign preview 1 and 2-->
+                        <div class="seasonPreview">
+                            <img src="media/testing/1_small.jpg"/>
+                            <div class="seasonPreviewBtns">
+                                <button class="seasonPreviewBtn" id="fallPreviewView"
+                                        data-page="media/testing/1_small.jpg"
+                                        onclick="viewSeasonImg(this.id)">
+                                    View Image
+                                    <hr/>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="seasonPreview">
+                            <img id="fallPreview1"/>
+                        </div>
+                        <div class="seasonPreview">
+                            <img id="fallPreview2"/>
+                        </div>
+                    </div>
+                    <div class="seasonSections">
+                        <div class="seasonSectionRow">
+                            <div class="seasonSectionRowItem"
+                                 data-page=""
+                                 onclick="seasonItemOpen(this.id)"
+                                 id="fallItem11">
+                                <div class="seasonSectionRowItemBK" id="fallItem11Bk"></div>
+                                <div class="seasonSectionRowItemNameBanner">
+                                    <div class="seasonSectionRowItemName">
+                                        Fall Sports
+                                        <hr/>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="seasonSectionRowItem"
+                                 data-page=""
+                                 onclick="seasonItemOpen(this.id)"
+                                 id="fallItem12">
+                                <div class="seasonSectionRowItemBK" id="fallItem12Bk"></div>
+                                <div class="seasonSectionRowItemNameBanner">
+                                    <div class="seasonSectionRowItemName">
+                                        Portraits
+                                        <hr/>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="seasonSectionRow">
+                            <div class="seasonSectionRowItem"
+                                 data-page=""
+                                 onclick="seasonItemOpen(this.id)"
+                                 id="fallItem21">
+                                <div class="seasonSectionRowItemBK" id="fallItem21Bk"></div>
+                                <div class="seasonSectionRowItemNameBanner">
+                                    <div class="seasonSectionRowItemName">
+                                        Student Life
+                                        <hr/>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="seasonSectionRowItem"
+                                 data-page=""
+                                 onclick="seasonItemOpen(this.id)"
+                                 id="fallItem22">
+                                <div class="seasonSectionRowItemBK" id="fallItem22Bk"></div>
+                                <div class="seasonSectionRowItemNameBanner">
+                                    <div class="seasonSectionRowItemName">
+                                        Homecoming
+                                        <hr/>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="seasonSectionRowItem"
+                                 data-page=""
+                                 onmouseup="seasonItemOpen(this.id)"
+                                 id="fallItem23">
+                                <div class="seasonSectionRowItemBK" id="fallItem23Bk"></div>
+                                <div class="seasonSectionRowItemNameBanner">
+                                    <div class="seasonSectionRowItemName">
+                                        Group Photos
+                                        <hr/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

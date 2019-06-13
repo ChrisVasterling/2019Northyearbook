@@ -1,0 +1,91 @@
+/*
+rgb(0, 119, 200);
+
+*/
+html, body {
+    margin: 0px;
+    padding: 0px;
+    padding-bottom: 500px;
+}
+* {
+    transition: 750ms ease-in-out;
+    font-family: 'Lato', sans-serif; /*Navigation*/
+    font-family: "Quicksand", sans-serif; /*Main*/
+}
+button {
+    font-family: "Lato", sans-serif;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 250ms ease-in-out;
+}
+hr {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    height: 2px;
+    transition: 250ms ease-in-out;
+}
+button > hr {
+    margin-top: 2px;
+    transform: rotateY(90deg);
+}
+button:hover > hr {
+    transform: rotateY(0deg);
+}
+.buttonSelected {
+    transform: scale(.95);
+}
+.top {
+    overflow: hidden;
+    position: relative;
+    height: 40vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.topImg {
+    height: calc(100% + 20px);
+    width: calc(100% + 20px);
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    filter: blur(5px);
+    background-size: cover;
+    background-position: center center;
+}
+.topText {
+    width: calc(80% - 20px);
+    text-align: center;
+    padding: 25px 10px 25px 10px;
+    font-size: 35px;
+    position: relative;
+    border-radius: 50px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(15px);
+}
+.topTextOpen {
+    opacity: 1;
+    transform: translateY(0px);
+    border-radius: 15px;
+}
+
+
+.content {
+    text-align: center;
+    font-size: 0px;
+}
+
+
+/*Media queries for different sizes below*/
+@media screen and (max-width: 1300px) {
+    .topImg {
+        filter: none !important;
+    }
+    .topText {
+        font-size: 25px;
+    }
+}
