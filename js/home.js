@@ -7,6 +7,7 @@ function viewSeasonImg(btnID) {
     buttonPress(btnID)
     JSLink("newtab", ele.dataset.page, 250)
 }
+
 function assignSeasonImgs() {
     // update with actual ranges
     var pages,
@@ -44,6 +45,7 @@ function choosePages(range, length) {
     }
     return chosenPages
 }
+
 function loadSeasonSectionPreviews() {
     var page, 
         seasonSections = {

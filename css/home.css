@@ -65,11 +65,7 @@ rgb(0, 119, 200);
     text-align: center;
 }
 .seasonPreviewBtn {
-    font-family: "Lato";
-    padding: 5px 10px 5px 10px;
     margin: 0px 5px 0px 5px;
-    font-size: 15px;
-    border-radius: 5px;
 }
 .seasonSections {
     font-size: 15px;
@@ -96,23 +92,67 @@ rgb(0, 119, 200);
     padding: 10px 0px 10px 0px;
     position: relative;
     overflow: hidden;
-    border-radius: 15px;
     transition-duration: 250ms;
     transform: scale(1) translate3d(0px, 0px, 0px);
 }
 .seasonSectionRowItemSelected {
     transform: scale(.95) translate3d(0px, 0px, 0px);
+    border-radius: 0px;
 }
+
 .seasonSectionRowItem:hover > .seasonSectionRowItemBK,
 .seasonSectionRowItemSelected > .seasonSectionRowItemBK {
-    transform: scale(1.25) translate3d(0px, 0px, 0px);
-    filter: blur(15px);
+    transform: scale(1);
 }
 .seasonSectionRowItem:hover > .seasonSectionRowItemNameBanner,
 .seasonSectionRowItemSelected > .seasonSectionRowItemNameBanner {
     width: calc(100% - 20px);
     border-radius: 0px;
 }
+
+.seasonSectionRowItemBorder {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+.seasonSectionRowItemBorder > div {
+    position: absolute;
+    transition-duration: 400ms;
+}
+.seasonSectionRowItemBorder > div:nth-child(2n+1) {
+    /*Top and bottom*/
+    height: 5px;
+    width: 100%;
+    transform: rotateY(90deg);
+}
+.seasonSectionRowItemBorder > div:nth-child(2n) {
+    /*left and right*/
+    width: 5px;
+    height: 100%;
+    transform: rotateX(90deg);
+}
+.seasonSectionRowItemBorder > div:nth-child(1) {
+    top: 0px;
+    transform-origin: left;
+}
+.seasonSectionRowItemBorder > div:nth-child(2) {
+    right: 0px;
+    transform-origin: top;
+}
+.seasonSectionRowItemBorder > div:nth-child(3) {
+    bottom: 0px;
+    transform-origin: right;
+}
+.seasonSectionRowItemBorder > div:nth-child(4) {
+    left: 0px;
+    transform-origin: bottom;
+}
+.seasonSectionRowItem:hover > .seasonSectionRowItemBorder > div,
+.seasonSectionRowItemSelected > .seasonSectionRowItemBorder > div {
+    transform: rotateY(0deg) rotateX(0deg);
+}
+
+
 .seasonSectionRowItemBK {
     position: absolute;
     top: -10px;
@@ -122,9 +162,15 @@ rgb(0, 119, 200);
     background-size: cover;
     background-position: center center;
     z-index: -1;
-    filter: blur(5px);
+    transition-duration: 400ms;
+    transform: scale(1.5);
+}
+.seasonSectionRowItemBKCover {
+    height: 100%;
+    width: 100%;
     transition-duration: 400ms;
 }
+
 .seasonSectionRowItemNameBanner {
     width: calc(75% - 20px);
     padding: 10px;
@@ -142,6 +188,7 @@ rgb(0, 119, 200);
     transform: rotateY(90deg);
     transition-duration: 400ms;
 }
+
 .seasonSectionRowItem:hover > .seasonSectionRowItemNameBanner > .seasonSectionRowItemName > hr,
 .seasonSectionRowItemSelected > .seasonSectionRowItemNameBanner > .seasonSectionRowItemName > hr {
     transform: rotateY(0deg);

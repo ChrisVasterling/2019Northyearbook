@@ -24,10 +24,21 @@
     </head>
     <body>
         
-        <!--Temporary-->
-        <button onclick="toggleTheme()" style="position: fixed; z-index: 1000;">
-            Toggle Light/Dark
+        <!--Temporary-->        
+        <button class="mainButton"
+                style="position: fixed; top: 25px; left: 25px; z-index: 1000;"
+                onclick="toggleTheme()">
+            <div class="buttonBorder">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="buttonContent">
+                Toggle Theme
+            </div>
         </button>
+        
         
         <div class="top">
             <div class="topImg" id="topImg" style=""></div>
@@ -47,11 +58,18 @@
                         <div class="seasonPreview">
                             <img src="media/testing/1_small.jpg"/>
                             <div class="seasonPreviewBtns">
-                                <button class="seasonPreviewBtn" id="fallPreviewView"
+                                <button class="seasonPreviewBtn mainButton" id="fallPreviewView"
                                         data-page="media/testing/1_small.jpg"
                                         onclick="viewSeasonImg(this.id)">
-                                    View Image
-                                    <hr/>
+                                    <div class="buttonBorder">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                    <div class="buttonContent">
+                                        View Image
+                                    </div>
                                 </button>
                             </div>
                         </div>
@@ -68,7 +86,15 @@
                                  data-page=""
                                  onclick="seasonItemOpen(this.id)"
                                  id="fallItem11">
-                                <div class="seasonSectionRowItemBK" id="fallItem11Bk"></div>
+                                <div class="seasonSectionRowItemBorder">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="seasonSectionRowItemBK" id="fallItem11Bk">
+                                    <div class="seasonSectionRowItemBKCover"></div>
+                                </div>
                                 <div class="seasonSectionRowItemNameBanner">
                                     <div class="seasonSectionRowItemName">
                                         Fall Sports
@@ -81,7 +107,15 @@
                                  data-page=""
                                  onclick="seasonItemOpen(this.id)"
                                  id="fallItem12">
-                                <div class="seasonSectionRowItemBK" id="fallItem12Bk"></div>
+                                <div class="seasonSectionRowItemBorder">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="seasonSectionRowItemBK" id="fallItem12Bk">
+                                    <div class="seasonSectionRowItemBKCover"></div>
+                                </div>
                                 <div class="seasonSectionRowItemNameBanner">
                                     <div class="seasonSectionRowItemName">
                                         Portraits
@@ -96,7 +130,15 @@
                                  data-page=""
                                  onclick="seasonItemOpen(this.id)"
                                  id="fallItem21">
-                                <div class="seasonSectionRowItemBK" id="fallItem21Bk"></div>
+                                <div class="seasonSectionRowItemBorder">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="seasonSectionRowItemBK" id="fallItem21Bk">
+                                    <div class="seasonSectionRowItemBKCover"></div>
+                                </div>
                                 <div class="seasonSectionRowItemNameBanner">
                                     <div class="seasonSectionRowItemName">
                                         Student Life
@@ -109,7 +151,15 @@
                                  data-page=""
                                  onclick="seasonItemOpen(this.id)"
                                  id="fallItem22">
-                                <div class="seasonSectionRowItemBK" id="fallItem22Bk"></div>
+                                <div class="seasonSectionRowItemBorder">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="seasonSectionRowItemBK" id="fallItem22Bk">
+                                    <div class="seasonSectionRowItemBKCover"></div>
+                                </div>
                                 <div class="seasonSectionRowItemNameBanner">
                                     <div class="seasonSectionRowItemName">
                                         Homecoming
@@ -122,7 +172,15 @@
                                  data-page=""
                                  onmouseup="seasonItemOpen(this.id)"
                                  id="fallItem23">
-                                <div class="seasonSectionRowItemBK" id="fallItem23Bk"></div>
+                                <div class="seasonSectionRowItemBorder">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <div class="seasonSectionRowItemBK" id="fallItem23Bk">
+                                    <div class="seasonSectionRowItemBKCover"></div>
+                                </div>
                                 <div class="seasonSectionRowItemNameBanner">
                                     <div class="seasonSectionRowItemName">
                                         Group Photos
@@ -134,6 +192,9 @@
                     </div>
                 </div>
             </div>
+            
+            <!--Insert more content here-->
+            
         </div>
     </body>
 </html>
