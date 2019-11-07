@@ -6,6 +6,7 @@ html, body {
     margin: 0px;
     padding: 0px;
     padding-bottom: 500px;
+    scroll-behavior: smooth;
 }
 * {
     transition: 750ms ease-in-out;
@@ -29,6 +30,11 @@ hr {
     transition: 250ms ease-in-out;
 }
 .mainButton > .buttonContent {
+    /*
+    min padding of 3px to 
+    accomodate the inner border 
+    widths/heights
+    */
     padding: 10px 15px 10px 15px;
     font-family: "Lato";
     font-size: 15px;
@@ -40,6 +46,7 @@ hr {
     height: 100%;
     width: 100%;
     position: absolute;
+    pointer-events: none;
 }
 .buttonBorder > div {
     position: absolute;
@@ -48,13 +55,13 @@ hr {
 }
 .buttonBorder > div:nth-child(2n+1) {
     /*Top and bottom*/
-    height: 5px;
+    height: 3px;
     width: 100%;
     transform: rotateY(90deg);
 }
 .buttonBorder > div:nth-child(2n) {
     /*left and right*/
-    width: 5px;
+    width: 3px;
     height: 100%;
     transform: rotateX(90deg);
 }
@@ -82,9 +89,7 @@ hr {
     position: relative;
     height: 40vh;
     width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    min-height:;
 }
 .topImg {
     height: calc(100% + 20px);
@@ -92,7 +97,7 @@ hr {
     position: absolute;
     top: -10px;
     left: -10px;
-    filter: blur(5px);
+    //filter: blur(5px);
     background-size: cover;
     background-position: center center;
 }
@@ -106,6 +111,7 @@ hr {
     text-align: center;
     opacity: 0;
     transform: translateY(15px);
+    display: inline-block;
 }
 .topTextOpen {
     opacity: 1;
@@ -113,13 +119,112 @@ hr {
     border-radius: 15px;
 }
 
+.navBar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    font-size: 0px;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    z-index: 10;
+}
+.navBarContent {
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 10px;
+}
+#homeTitle {
+    display: none;
+}
+#gotoHomeBtn {
+    display: inline-block;
+}
+#navBarMenuToggle {
+    display: none;
+}
+.menu {
+    display: inline-block;
+    text-align: right;
+}
+.menuButton, #navBarMenuToggle {
+    margin: 10px;
+}
 
+.menuButton > .buttonContent, 
+#gotoHomeBtn > .buttonContent, 
+#navBarMenuToggle > .buttonContent {
+    font-size: 17px;
+}
+
+#navBarMenuToggle > .buttonContent {
+    padding: 8px 5px 8px 5px;
+}
+#navBarMenuToggle > .buttonContent > div {
+    height: 3px;
+    width: 30px;
+    margin: 6px;
+}
+
+.topContentBox {
+    position: relative;
+}
+
+
+.searchButton {
+    margin: 25px;
+    display: inline-block;
+}
+.searchButton > .buttonContent {
+    font-size: 20px;
+    padding: 10px 35px 10px 35px;
+}
 .content {
     text-align: center;
     font-size: 0px;
 }
 
 /*Media queries for different sizes below*/
+@media screen and (max-width: 1000px) {
+    #navBarMenuToggle {
+        display: inline-block;
+    }
+    .menu {
+        position: fixed;
+        top: 0px;
+        right: -300px;
+        width: 300px;
+        height: 100%;
+        max-width: 80%;
+        transition: 250ms ease-in-out;
+        z-index: 10;
+    }
+    .menuOpen {
+        right: 0px;
+    }
+    .menuButton {
+        display: block;
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+    .cover {
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        z-index: 10;
+        height: 100%;
+        width: 100%;
+        visibility: hidden;
+        transition: 250ms ease-in-out;
+    }
+    .coverOpen {
+        visibility: visible;
+    }
+}
+
 @media screen and (max-width: 1300px) {
     .topImg {
         filter: none !important;

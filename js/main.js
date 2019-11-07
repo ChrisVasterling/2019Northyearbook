@@ -1,6 +1,9 @@
 window.addEventListener("load", function(){
     loadPage()
 })
+window.addEventListener("resize", function(){
+    setTopContBox()
+})
 function randInt(low, high) {
     var origin = high - low;
     var number = Math.floor(Math.random()*(origin+1)) + low;
@@ -12,16 +15,29 @@ function loadPage() {
         imgEle = document.getElementById("topImg"),
         randomImageIndex = randInt(0, randomImages.length-1),
         randomImagePath = randomImages[randomImageIndex];
-    textEle.textContent = pageName;
     imgEle.style.backgroundImage = "url('" + randomImagePath + "')";
-    setTimeout(function(){
-        textEleCont.classList.add("topTextOpen")
-    }, 750)
+    setTopContBox()
+    if (textEle != null) {
+        textEle.textContent = pageName;
+        setTimeout(function(){
+            textEleCont.classList.add("topTextOpen")
+        }, 750)
+    }
 }
-var currentTheme = "light"
+function setTopContBox() {
+    // sets the size of the box that fills up the rest of
+    // the area in the top
+    var topConBx = document.getElementById("topContentBox"),
+        navBarHeight = document.getElementById("navBar").offsetHeight;
+    topConBx.style.top = navBarHeight + "px"
+    topConBx.style.height = "calc(100% - " + navBarHeight + "px)"
+}
+var currentTheme = "dark"
+var shortBtnDelay = 250;
 function toggleTheme() {
     var ele = document.getElementById("cssTheme");
     var newTheme;
+    togClassDelay("cssThemeTog", "buttonSelected", shortBtnDelay)
     if (currentTheme == "light") {
         newTheme = "dark";
     }
@@ -29,13 +45,24 @@ function toggleTheme() {
         newTheme = "light";
     }
     currentTheme = newTheme;
-    ele.href = distanceFromHome + "css/" + newTheme + ".css"
+    setTimeout(function(){
+        ele.href = distanceFromHome + "css/" + newTheme + ".css";
+    }, shortBtnDelay)
 }
-
-function buttonPress(btnID) {
-    addClassDelay(btnID, "buttonSelected", 250);
+function backToTop(btnID) {
+    var ele = document.getElementById(btnID);
+    togClassDelay(btnID, "buttonSelected", shortBtnDelay);
+    setTimeout(function(){
+        window.scrollTo(0,0)
+    }, shortBtnDelay)
 }
-function addClassDelay(id, className, delay) {
+function goHome(btnID) {
+    var ele = document.getElementById(btnID);
+    togClassDelay(btnID, "buttonSelected", shortBtnDelay);
+    var page = distanceFromHome + "index.html"
+    JSLink("external", page, shortBtnDelay*2)
+}
+function togClassDelay(id, className, delay) {
     var ele = document.getElementById(id);
     ele.classList.add(className)
     setTimeout(function(){
@@ -51,9 +78,41 @@ function JSLink(IntExt, page, delay) {
         } else if (IntExt.toLowerCase() == 'back') {
             window.history.back()
         } else if (IntExt.toLowerCase() == 'internal') {
-            var location = document.getElementById(btn).dataset.page,
+            var location = document.getElementById(btn).dataset.innerpage,
                 section = document.getElementById(location).offsetTop - 10;
             window.scrollTo(0, section);
         }
+    }, delay)
+}
+
+
+
+function LinkViaBtn(btnID) {
+    togClassDelay(btnID, "buttonSelected", shortBtnDelay);
+    var page = distanceFromHome + document.getElementById(btnID).dataset.pagefromroot;
+    JSLink("external", page, shortBtnDelay*2)
+}
+
+var menuOpen = false;
+function toggleMenu(eleID) {
+    var togBtn = document.getElementById("eleID"),
+        mnu = document.getElementById("menu"),
+        cvr = document.getElementById("cover"),
+        delay = 0;
+    if (eleID == "navBarMenuToggle") {
+        togClassDelay("navBarMenuToggle", "buttonSelected", shortBtnDelay)
+        delay = shortBtnDelay*2
+    }
+    setTimeout(function(){
+        
+        if (menuOpen) {
+            mnu.classList.remove("menuOpen")
+            cvr.classList.remove("coverOpen")
+        } else {
+            mnu.classList.add("menuOpen")
+            cvr.classList.add("coverOpen")
+        }
+        // toggle the menu state
+        menuOpen = !menuOpen
     }, delay)
 }

@@ -2,10 +2,13 @@
 body {
     background-color: rgb(75, 75, 75);
 }
+.mainButton {
+    background-color: transparent;
+}
 .mainButton:hover, .buttonSelected {
     box-shadow: 0px 0px 5px 1px rgb(25, 25, 25);
 }
-.buttonBorder > div {
+.buttonBorder > div, #navBarMenuToggle > .buttonContent > div {
     background-color: rgb(0, 119, 200);
 }
 hr {
@@ -14,11 +17,11 @@ hr {
 .top {
     box-shadow: 0px 10px 15px -5px rgb(25, 25, 25);
 }
-.topText {
+.topText, .navBar {
     background-color: rgba(25, 25, 25, .75);
     box-shadow: 0px 0px 25px -5px rgb(25, 25, 25);
 }
-#topText {
+#topText, #homeTitle {
     color: rgb(200, 200, 200);
 }
 
@@ -31,16 +34,30 @@ hr {
 .seasonPreview {
     box-shadow: -5px 0px 10px -5px rgb(0, 0, 0);
 }
+.seasonPreview::before {
+    background-color: rgba(25, 25, 25, .3);
+}
 .seasonPreviewBtns {
     background-color: rgba(0, 119, 200, .75);
     box-shadow: 0px -5px 10px -5px rgb(25, 25, 25);
 }
 .mainButton > .buttonContent {
-    background-color: rgb(200, 200, 200);
-    color: rgb(25, 25, 25);
+    background-color: rgba(25, 25, 25, 1);
+    color: rgb(200, 200, 200);
 }
 .mainButton > .buttonContent > hr {
     background-color: rgb(0, 119, 200);
+}
+
+.menuButton:hover, 
+#gotoHomeBtn:hover,
+#navBarMenuToggle:hover {
+    box-shadow: none;
+}
+.menuButton > .buttonContent, 
+#gotoHomeBtn > .buttonContent,
+#navBarMenuToggle > .buttonContent {
+    background-color: transparent;
 }
 
 .seasonSectionRowItem {
@@ -59,22 +76,35 @@ hr {
     background-color: rgb(100, 100, 100);
 }
 .seasonSectionRowItemBKCover {
-    background-color: rgba(25, 25, 25, .5);
+    background-color: rgba(25, 25, 25, .7);
 }
 .seasonSectionRowItem:hover > .seasonSectionRowItemBK > .seasonSectionRowItemBKCover,
 .seasonSectionRowItemSelected > .seasonSectionRowItemBK > .seasonSectionRowItemBKCover {
     background-color: transparent;
 }
-.seasonSectionRowItemNameBanner {
-    background-color: rgba(25, 25, 25, .75);
-    box-shadow: 0px 0px 15px 0px rgb(25, 25, 25);
-}
-.seasonSectionRowItem:hover > .seasonSectionRowItemNameBanner,
-.seasonSectionRowItemSelected > .seasonSectionRowItemNameBanner {
+
+.seasonSectionRowItem:hover > .seasonSectionRowItemNameBanner::before,
+.seasonSectionRowItemSelected > .seasonSectionRowItemNameBanner::before {
     background-color: rgba(25, 25, 25, 1);
 }
 .seasonSectionRowItemName {
     color: rgb(225, 225, 225);
+}
+
+@media screen and (max-width: 1000px) {
+    .menu {
+        background-color: rgba(25, 25, 25, .75);
+        box-shadow: 0px 0px 25px -5px transparent;
+    }
+    .menuOpen {
+        box-shadow: 0px 0px 25px -5px rgb(25, 25, 25);
+    }
+    .cover {
+        background-color: transparent
+    }
+    .coverOpen {
+        background-color: rgba(25, 25, 25, .5);
+    }
 }
 
 @media screen and (max-width: 1300px) {

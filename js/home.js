@@ -2,11 +2,6 @@ window.addEventListener("load", function() {
     loadSeasonSectionPreviews()
     assignSeasonImgs()
 })
-function viewSeasonImg(btnID) {
-    var ele = document.getElementById(btnID)
-    buttonPress(btnID)
-    JSLink("newtab", ele.dataset.page, 250)
-}
 
 function assignSeasonImgs() {
     // update with actual ranges
@@ -58,8 +53,9 @@ function loadSeasonSectionPreviews() {
     /*
         seasonSections:
         key is id of element
-        2 digit number is row + column
-        21 is row two first item
+            2 digit number is row + column
+            21 is row two first item
+        Data is a list of first through last possible pages
     */
     for (var i in seasonSections) {
         page = randInt(seasonSections[i][0], seasonSections[i][1])
@@ -71,7 +67,7 @@ function loadSeasonSectionPreviews() {
 
 function seasonItemOpen(btnID) {
     var aniDur = 400;
-    addClassDelay(btnID, "seasonSectionRowItemSelected", aniDur);
+    togClassDelay(btnID, "seasonSectionRowItemSelected", aniDur);
     var page = document.getElementById(btnID).dataset.page;
     JSLink("external", page, aniDur)
 }

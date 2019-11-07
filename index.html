@@ -7,7 +7,7 @@
         
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css/light.css" id="cssTheme">
+        <link rel="stylesheet" href="css/dark.css" id="cssTheme">
         <link rel="icon" href="media/icon.ico">
         <link href="https://fonts.googleapis.com/css?family=Lato|Quicksand&amp;display=swap" rel="stylesheet">
         
@@ -26,8 +26,9 @@
         
         <!--Temporary-->        
         <button class="mainButton"
-                style="position: fixed; top: 25px; left: 25px; z-index: 1000;"
-                onclick="toggleTheme()">
+                style="position: fixed; bottom: 25px; left: 25px; z-index: 10;"
+                onclick="toggleTheme()"
+                id="cssThemeTog">
             <div class="buttonBorder">
                 <div></div>
                 <div></div>
@@ -39,15 +40,176 @@
             </div>
         </button>
         
+        <button class="mainButton"
+                style="position: fixed; bottom: 25px; right: 25px; z-index: 10;"
+                onclick="backToTop(this.id)"
+                id="backToTop">
+            <div class="buttonBorder">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="buttonContent">
+                Back to Top
+            </div>
+        </button>
         
         <div class="top">
             <div class="topImg" id="topImg" style=""></div>
-            <div class="topText" id="topTextCont">
-                <span id="topText"></span>
+            <div class="navBar" id="navBar">
+                
+                
+                <div class="navBarContent">
+                    <img src="media/husky.png" style="height: 55px;"/>
+                    <button class="mainButton"
+                            id="gotoHomeBtn"
+                            onclick="goHome(this.id)">
+                        <div class="buttonBorder">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="buttonContent">
+                            Home
+                        </div>
+                    </button>
+                    <span id="homeTitle">
+                        2019 North Yearbook
+                    </span>
+                </div>
+                
+                <button class="mainButton"
+                    id="navBarMenuToggle"
+                    onclick="toggleMenu(this.id)">
+                    <div class="buttonBorder">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="buttonContent">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </button>
+                
+                <div class="cover" id="cover" onclick="toggleMenu(this.id)"></div>
+                <div class="menu" id="menu">
+                    <div class="menuPrimeBtns">
+                        
+                        <button class="mainButton menuButton"
+                                data-pagefromroot=""
+                                onclick=LinkViaBtn(this.id)
+                                id="menuItemFre">
+                            <div class="buttonBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="buttonContent">
+                                Freshmen
+                            </div>
+                        </button>
+                        
+                        <button class="mainButton menuButton"
+                                data-pagefromroot=""
+                                onclick=LinkViaBtn(this.id)
+                                id="menuItemSop">
+                            <div class="buttonBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="buttonContent">
+                                Sophomores
+                            </div>
+                        </button>
+                        
+                        <button class="mainButton menuButton"
+                                data-pagefromroot=""
+                                onclick=LinkViaBtn(this.id)
+                                id="menuItemJun">
+                            <div class="buttonBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="buttonContent">
+                                Juniors
+                            </div>
+                        </button>
+                        
+                        <button class="mainButton menuButton"
+                                data-pagefromroot=""
+                                onclick=LinkViaBtn(this.id)
+                                id="menuItemSen">
+                            <div class="buttonBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="buttonContent">
+                                Seniors
+                            </div>
+                        </button>
+                        
+                        <button class="mainButton menuButton"
+                                data-pagefromroot=""
+                                onclick=LinkViaBtn(this.id)
+                                id="menuItemSta">
+                            <div class="buttonBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="buttonContent">
+                                Staff
+                            </div>
+                        </button>
+                    </div>
+                </div>            
+                
             </div>
-        </div>        
-        <br/><hr/><br/>
+            
+            <div class="topContentBox" id="topContentBox">
+                <!--Not needed for home page-->
+                <!--
+                <div class="topText" id="topTextCont">
+                    <span id="topText"></span>
+                </div>
+                -->
+                Content
+            </div>
+            
+            
+        </div>
+        
         <div class="content">
+            
+            <button class="mainButton searchButton"
+                    id="searh_button"
+                    onclick="LinkViaBtn(this.id)"
+                    data-pagefromroot="html/search.html">
+                <div class="buttonBorder">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="buttonContent">
+                    Find Someone
+                </div>
+            </button>
+            
+            <br/>
             <div class="season" id="season_fall">
                 <div class="seasonTitle">
                     <span class="seasonTitleText">Fall</span>
@@ -59,8 +221,8 @@
                             <img src="media/testing/1_small.jpg"/>
                             <div class="seasonPreviewBtns">
                                 <button class="seasonPreviewBtn mainButton" id="fallPreviewView"
-                                        data-page="media/testing/1_small.jpg"
-                                        onclick="viewSeasonImg(this.id)">
+                                        data-pagefromroot="media/testing/1_small.jpg"
+                                        onclick="LinkViaBtn(this.id)">
                                     <div class="buttonBorder">
                                         <div></div>
                                         <div></div>
@@ -83,10 +245,10 @@
                     <div class="seasonSections">
                         <div class="seasonSectionRow">
                             <div class="seasonSectionRowItem"
-                                 data-page=""
-                                 onclick="seasonItemOpen(this.id)"
+                                 data-pagefromroot=""
+                                 onclick="LinkViaBtn(this.id)"
                                  id="fallItem11">
-                                <div class="seasonSectionRowItemBorder">
+                                <div class="buttonBorder seasonSectionRowItemBorder">
                                     <div></div>
                                     <div></div>
                                     <div></div>
@@ -104,10 +266,10 @@
                             </div>
                             
                             <div class="seasonSectionRowItem"
-                                 data-page=""
-                                 onclick="seasonItemOpen(this.id)"
+                                 data-pagefromroot=""
+                                 onclick="LinkViaBtn(this.id)"
                                  id="fallItem12">
-                                <div class="seasonSectionRowItemBorder">
+                                <div class="buttonBorder seasonSectionRowItemBorder">
                                     <div></div>
                                     <div></div>
                                     <div></div>
@@ -127,10 +289,10 @@
                         </div>
                         <div class="seasonSectionRow">
                             <div class="seasonSectionRowItem"
-                                 data-page=""
-                                 onclick="seasonItemOpen(this.id)"
+                                 data-pagefromroot=""
+                                 onclick="LinkViaBtn(this.id)"
                                  id="fallItem21">
-                                <div class="seasonSectionRowItemBorder">
+                                <div class="buttonBorder seasonSectionRowItemBorder">
                                     <div></div>
                                     <div></div>
                                     <div></div>
@@ -148,10 +310,10 @@
                             </div>
                             
                             <div class="seasonSectionRowItem"
-                                 data-page=""
-                                 onclick="seasonItemOpen(this.id)"
+                                 data-pagefromroot=""
+                                 onclick="LinkViaBtn(this.id)"
                                  id="fallItem22">
-                                <div class="seasonSectionRowItemBorder">
+                                <div class="buttonBorder seasonSectionRowItemBorder">
                                     <div></div>
                                     <div></div>
                                     <div></div>
@@ -169,10 +331,10 @@
                             </div>
                             
                             <div class="seasonSectionRowItem"
-                                 data-page=""
-                                 onmouseup="seasonItemOpen(this.id)"
+                                 data-pagefromroot=""
+                                 onclick="LinkViaBtn(this.id)"
                                  id="fallItem23">
-                                <div class="seasonSectionRowItemBorder">
+                                <div class="buttonBorder seasonSectionRowItemBorder">
                                     <div></div>
                                     <div></div>
                                     <div></div>
