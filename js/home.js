@@ -1,27 +1,6 @@
 window.addEventListener("load", function() {
     loadSeasonSectionPreviews();
-    assignSeasonImgs();
 })
-
-function assignSeasonImgs() {
-    // update with actual ranges
-    var pages,
-        seasons = {
-            "fall" : [[8, 107], ["fallPreview1", "fallPreview2"]],
-            "winter" : [[108, 139], ["winterPreview1", "winterPreview2"]],
-            "spring" : [[140, 167], ["springPreview1", "springPreview2"]]
-        };
-    
-    for (var s in seasons) {
-        pages = choosePages(seasons[s][0], seasons[s][1].length);
-        for (var p in pages) {
-            // change src attribute value to actual filepath
-            var ele = document.getElementById(seasons[s][1][p]),
-                attribData = "media/pages/" + pages[p] + "_small.jpg";
-            ele.setAttribute("src", attribData)
-        }
-    }
-}
 function choosePages(range, length) {
     /*
         in order to not repeat: 

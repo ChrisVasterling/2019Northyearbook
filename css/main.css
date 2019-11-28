@@ -28,6 +28,12 @@ hr {
     height: 2px;
     transition: 250ms ease-in-out;
 }
+a, a:visited {
+    color: rgb(0, 119, 200);
+    text-decoration: none;
+    font-family: Lato;
+    font-family: "Quicksand";
+}
 .mainButton > .buttonContent {
     /*
     min padding of 3px to 
@@ -88,6 +94,7 @@ hr {
     overflow: hidden;
     position: relative;
     height: 40vh;
+    min-height: 300px;
     width: 100%;
     min-height:;
 }
@@ -154,8 +161,22 @@ hr {
 
 .topContentBox {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
-
+.topText {
+    display: inline-block;
+    text-align: center;
+    position: relative;
+    width: 75%;
+    padding: 25px 10px 25px 10px;
+    border-radius: 25px;
+}
+#topText {
+    font-size: 35px;
+}
 
 .searchButton {
     margin: 25px;
@@ -169,6 +190,43 @@ hr {
     text-align: center;
     font-size: 0px;
 }
+
+.ybImgs {
+    display: inline-block;
+    border-radius: 25px;
+    padding: 10px;
+    width: 80%;
+    position: relative;
+    font-size: 0px;
+    margin-bottom: 75px;
+}
+.ybButton {
+    margin: 10px;
+    background-color: transparent;
+}
+.ybImgCover {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
+}
+.ybButton > .buttonBorder > div:nth-child(2n+1) {
+    height: 5px;
+}
+.ybButton > .buttonBorder > div:nth-child(2n) {
+    width: 5px;
+}
+.ybButton > .buttonContent {
+    padding: 0px;
+    font-size: 0px;
+}
+.ybImg {
+    max-height: 400px;
+    max-width: 100%;
+}
+
 
 /*Media queries for different sizes below*/
 @media screen and (max-width: 1000px) {
@@ -208,16 +266,5 @@ hr {
     }
     #homeTitle {
         font-size: 25px !important;
-    }
-}
-@media screen and (max-width: 600px) {
-    .season {
-        width: calc(100% - 20px);
-    }
-    .seasonPreview:nth-child(1) > img {
-        width: calc(100% - 10px);
-    }
-    .seasonPreview:nth-child(2), .seasonPreview:nth-child(3) {
-        display: none;
     }
 }

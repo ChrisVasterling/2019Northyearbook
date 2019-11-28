@@ -13,18 +13,13 @@
         
         <script src="js/main.js"></script>
         <script src="js/home.js"></script>
-        <script src="js/search_list.js"></script>
         <script>
             var pageName = "2019 North Yearbook";
             var distanceFromHome = "";
-            var randomImages = [
-                "media/background1.jpg",
-            ]
         </script>
     </head>
     <body>
-        
-        <!--Temporary-->        
+               
         <button class="mainButton"
                 style="position: fixed; bottom: 25px; left: 25px; z-index: 10;"
                 onclick="toggleTheme()"
@@ -237,12 +232,6 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="seasonPreview">
-                            <img id="fallPreview1"/>
-                        </div>
-                        <div class="seasonPreview">
-                            <img id="fallPreview2"/>
-                        </div>
                     </div>
                     <div class="seasonSections">
                         <div class="seasonSectionItem"
@@ -377,12 +366,6 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="seasonPreview">
-                            <img id="winterPreview1"/>
-                        </div>
-                        <div class="seasonPreview">
-                            <img id="winterPreview2"/>
-                        </div>
                     </div>
                     <div class="seasonSections">
                         <div class="seasonSectionItem"
@@ -497,12 +480,6 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="seasonPreview">
-                            <img id="springPreview1"/>
-                        </div>
-                        <div class="seasonPreview">
-                            <img id="springPreview2"/>
-                        </div>
                     </div>
                     <div class="seasonSections">
                         <div class="seasonSectionItem"
@@ -589,6 +566,30 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            
+            <div class="season">
+                <div class="seasonContent" style=" font-size: 15px; display: block;">
+                    <button class="mainButton"
+                    id="view_all"
+                    onclick="LinkViaBtn(this.id)"
+                    data-pagefromroot="html/all.html">
+                        <div class="buttonBorder">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="buttonContent">
+                            All Photos
+                        </div>
+                    </button>
+                    <br/>
+                    <hr style="margin: 10px; width: 40%; display: inline-block"/>
+                    <br/>
+                    Created and Designed by
+                    <a href="http://chrisvasterling.weebly.com" target="_blank">Chris Vasterling</a>
                 </div>
             </div>
             

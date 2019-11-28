@@ -25,14 +25,11 @@ hr {
     color: rgb(50, 50, 50);
 }
 
-.seasonTitle {
-    border-bottom: 2px solid rgb(0, 119, 200);
+.seasonContent, .ybImgs {
+    border: 2px solid rgb(200, 200, 200);
 }
 .seasonTitleText {
     color: rgb(25, 25, 25)
-}
-.seasonPreview {
-    box-shadow: -5px 0px 10px -5px rgb(100, 100, 100);
 }
 .seasonPreview::before {
     background-color: transparent;
@@ -68,16 +65,19 @@ hr {
     background-color: rgba(225, 225, 225, .7);
 }
 .seasonSectionItem:hover > .seasonSectionItemBK > .seasonSectionItemBKCover,
-.seasonSectionItemSelected > .seasonSectionItemBK > .seasonSectionItemBKCover {
+.seasonSectionItem.buttonSelected > .seasonSectionItemBK > .seasonSectionItemBKCover {
     background-color: transparent;
 }
-
 .seasonSectionItem:hover > .seasonSectionItemNameBanner::before,
-.seasonSectionItemSelected > .seasonSectionItemNameBanner::before {
+.seasonSectionItem.buttonSelected > .seasonSectionItemNameBanner::before {
     background-color: rgba(225, 225, 225, 1);
 }
 .seasonSectionItemName {
     color: rgb(25, 25, 25);
+}
+
+.ybImgCover {
+    background-color: transparent;
 }
 
 @media screen and (max-width: 1000px) {
@@ -93,14 +93,5 @@ hr {
     }
     .coverOpen {
         background-color: rgba(225, 225, 225, .25);
-    }
-}
-
-@media screen and (max-width: 1300px) {
-    .seasonPreview:nth-child(1) {
-        box-shadow: 0px 0px 15px -5px rgb(100, 100, 100);
-    }
-    .seasonPreview:nth-child(2) {
-        box-shadow: 5px 0px 10px -5px rgb(100, 100, 100);
     }
 }
