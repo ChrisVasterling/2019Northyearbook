@@ -60,34 +60,34 @@ hr {
     background-color: transparent;
 }
 
-.seasonSectionRowItem {
+.seasonSectionItem {
     box-shadow: 0px 0px 25px -5px rgb(25, 25, 25);
 }
-.seasonSectionRowItem:hover, .seasonSectionRowItemSelected {
+.seasonSectionItem:hover, .seasonSectionItemSelected {
     box-shadow: 0px 0px 15px 0px rgb(25, 25, 25);
 }
-.seasonSectionRowItemSelected {
+.seasonSectionItemSelected {
     box-shadow: 0px 0px 5px 0px rgb(25, 25, 25) !important;
 }
-.seasonSectionRowItemBorder > div {
+.seasonSectionItemBorder > div {
     background-color: rgb(0, 119, 200);
 }
-.seasonSectionRowItemBK {
+.seasonSectionItemBK {
     background-color: rgb(100, 100, 100);
 }
-.seasonSectionRowItemBKCover {
+.seasonSectionItemBKCover {
     background-color: rgba(25, 25, 25, .7);
 }
-.seasonSectionRowItem:hover > .seasonSectionRowItemBK > .seasonSectionRowItemBKCover,
-.seasonSectionRowItemSelected > .seasonSectionRowItemBK > .seasonSectionRowItemBKCover {
+.seasonSectionItem:hover > .seasonSectionItemBK > .seasonSectionItemBKCover,
+.seasonSectionItemSelected > .seasonSectionItemBK > .seasonSectionItemBKCover {
     background-color: transparent;
 }
 
-.seasonSectionRowItem:hover > .seasonSectionRowItemNameBanner::before,
-.seasonSectionRowItemSelected > .seasonSectionRowItemNameBanner::before {
+.seasonSectionItem:hover > .seasonSectionItemNameBanner::before,
+.seasonSectionItemSelected > .seasonSectionItemNameBanner::before {
     background-color: rgba(25, 25, 25, 1);
 }
-.seasonSectionRowItemName {
+.seasonSectionItemName {
     color: rgb(225, 225, 225);
 }
 

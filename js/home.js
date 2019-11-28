@@ -1,15 +1,15 @@
 window.addEventListener("load", function() {
-    loadSeasonSectionPreviews()
-    assignSeasonImgs()
+    loadSeasonSectionPreviews();
+    assignSeasonImgs();
 })
 
 function assignSeasonImgs() {
     // update with actual ranges
     var pages,
         seasons = {
-            "fall" : [[2, 3], ["fallPreview1", "fallPreview2"]],
-            "winter" : [[2, 3], ["winterPreview1", "winterPreview2"]],
-            "spring" : [[2, 3], ["springPreview1", "springPreview2"]]
+            "fall" : [[8, 107], ["fallPreview1", "fallPreview2"]],
+            "winter" : [[108, 139], ["winterPreview1", "winterPreview2"]],
+            "spring" : [[140, 167], ["springPreview1", "springPreview2"]]
         };
     
     for (var s in seasons) {
@@ -17,7 +17,7 @@ function assignSeasonImgs() {
         for (var p in pages) {
             // change src attribute value to actual filepath
             var ele = document.getElementById(seasons[s][1][p]),
-                attribData = "media/testing/" + pages[p] + "_small.jpg";
+                attribData = "media/pages/" + pages[p] + "_small.jpg";
             ele.setAttribute("src", attribData)
         }
     }
@@ -44,30 +44,24 @@ function choosePages(range, length) {
 function loadSeasonSectionPreviews() {
     var page, 
         seasonSections = {
-        "fallItem11Bk" : [1, 2],
-        "fallItem12Bk" : [3, 4],
-        "fallItem21Bk" : [5, 6],
-        "fallItem22Bk" : [7, 8],
-        "fallItem23Bk" : [9, 10]
+            "fallItemABk" : [18, 33],
+            "fallItemPBk" : [42, 107],
+            "fallItemSLBk" : [8, 15],
+            "fallItemDNCBk" : [4, 7],
+            "fallItemGPBk" : [34, 39],
+            "winItemABk" : [110, 125],
+            "winItemSLBk" : [130, 131],
+            "winItemDNCBk" : [126, 129],
+            "winItemGPBk" : [134, 139],
+            "sprItemABk" : [142, 153],
+            "sprItemSLBk" : [160, 165],
+            "sprItemDNCBk" : [166, 167],
+            "sprItemGPBk" : [154, 159]
     };
-    /*
-        seasonSections:
-        key is id of element
-            2 digit number is row + column
-            21 is row two first item
-        Data is a list of first through last possible pages
-    */
     for (var i in seasonSections) {
         page = randInt(seasonSections[i][0], seasonSections[i][1])
         var ele = document.getElementById(i), 
-            imageData = "url('" + distanceFromHome + "media/testing/" + page + "_small.jpg')"
-        ele.style.backgroundImage = imageData
+            imageData = "url('" + distanceFromHome + "media/pages/" + page + "_small.jpg')"
+        ele.style.backgroundImage = imageData;
     }
-}
-
-function seasonItemOpen(btnID) {
-    var aniDur = 400;
-    togClassDelay(btnID, "seasonSectionRowItemSelected", aniDur);
-    var page = document.getElementById(btnID).dataset.page;
-    JSLink("external", page, aniDur)
 }

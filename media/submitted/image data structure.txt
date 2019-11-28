@@ -1,0 +1,13 @@
+var studentimagedata = {
+	"1" : [folderName (ecsad), date, [[names row 1], [row2]], event, notes],
+	"1" : [folderName (student), date, [[names row 1], [row2]], event, notes],
+	"2" : [folderName, date, [[names row 1], [row2]], event, notes]
+	etc...
+	etc......
+}
+
+// maybe?
+var events = {
+	"cross country" : [1, 2, 3, 4, 5],
+	"prom" : [4, 5, 7, 10, 3]
+}

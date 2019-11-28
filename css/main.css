@@ -1,11 +1,10 @@
-/*
+﻿/*
 rgb(0, 119, 200);
 
 */
 html, body {
     margin: 0px;
     padding: 0px;
-    padding-bottom: 500px;
     scroll-behavior: smooth;
 }
 * {
@@ -46,6 +45,7 @@ hr {
     height: 100%;
     width: 100%;
     position: absolute;
+    top: 0px;
     pointer-events: none;
 }
 .buttonBorder > div {
@@ -100,23 +100,6 @@ hr {
     //filter: blur(5px);
     background-size: cover;
     background-position: center center;
-}
-.topText {
-    width: calc(80% - 20px);
-    text-align: center;
-    padding: 25px 10px 25px 10px;
-    font-size: 35px;
-    position: relative;
-    border-radius: 50px;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(15px);
-    display: inline-block;
-}
-.topTextOpen {
-    opacity: 1;
-    transform: translateY(0px);
-    border-radius: 15px;
 }
 
 .navBar {
@@ -223,13 +206,7 @@ hr {
     .coverOpen {
         visibility: visible;
     }
-}
-
-@media screen and (max-width: 1300px) {
-    .topImg {
-        filter: none !important;
-    }
-    .topText {
-        font-size: 25px;
+    #homeTitle {
+        font-size: 25px !important;
     }
 }

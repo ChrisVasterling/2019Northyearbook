@@ -30,6 +30,7 @@ rgb(0, 119, 200);
     margin-top: 10px;
     display: flex;
     text-align: center;
+    align-items: center;
 }
 
 .seasonPreviews {
@@ -84,48 +85,41 @@ rgb(0, 119, 200);
     margin: 0px 5px 0px 5px;
 }
 .seasonSections {
-    font-size: 15px;
-    width: calc(100% - 20px);
+    font-size: 0px;
+    width: calc(100% - 10px);
     padding: 10px;
     padding-left: 0px;
-}
-.seasonSectionRow {
-    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-.seasonSectionRowItem {
-    display: block;
-    flex: 1;
-    height: calc(100% - calc(20px + 20px));
-    margin: 20px 10px 20px 10px;
+.seasonSectionItem {
+    margin: 10px;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 0px 10px 0px;
+    display: inline-block;
+    padding: 25px 0px 25px 0px;
     position: relative;
     overflow: hidden;
     transition-duration: 250ms;
     transform: scale(1) translate3d(0px, 0px, 0px);
+    min-width: calc(50% - 20px);
+    flex-grow: 1;
 }
-.seasonSectionRowItemSelected {
+.seasonSectionItemSelected {
     transform: scale(.95) translate3d(0px, 0px, 0px);
     border-radius: 0px;
 }
 
-.seasonSectionRowItem:hover > .seasonSectionRowItemBK,
-.seasonSectionRowItemSelected > .seasonSectionRowItemBK {
+.seasonSectionItem:hover > .seasonSectionItemBK,
+.seasonSectionItemSelected > .seasonSectionItemBK {
     transform: scale(1);
 }
-.seasonSectionRowItem:hover > .seasonSectionRowItemNameBanner::before,
-.seasonSectionRowItemSelected > .seasonSectionRowItemNameBanner::before {
+.seasonSectionItem:hover > .seasonSectionItemNameBanner::before,
+.seasonSectionItemSelected > .seasonSectionItemNameBanner::before {
     width: 100%;
     left: 0px;
 }
-.seasonSectionRowItemNameBanner::before {
+.seasonSectionItemNameBanner::before {
     content: "";
     position: absolute;
     width: 75%;
@@ -137,45 +131,29 @@ rgb(0, 119, 200);
 }
 
 
-.seasonSectionRowItemBorder > div {
+.seasonSectionItemBorder > div {
     position: absolute;
-    transition-duration: 400ms !important;
+    transition-duration: 250 !important;
 }
-.seasonSectionRowItemBorder > div:nth-child(2n+1) {
+.seasonSectionItemBorder > div:nth-child(2n+1) {
     /*Top and bottom*/
     height: 3px;
     width: 100%;
     transform: rotateY(90deg);
 }
-.seasonSectionRowItemBorder > div:nth-child(2n) {
+.seasonSectionItemBorder > div:nth-child(2n) {
     /*left and right*/
     width: 3px;
     height: 100%;
     transform: rotateX(90deg);
 }
-.seasonSectionRowItemBorder > div:nth-child(1) {
-    top: 0px;
-    transform-origin: left;
-}
-.seasonSectionRowItemBorder > div:nth-child(2) {
-    right: 0px;
-    transform-origin: top;
-}
-.seasonSectionRowItemBorder > div:nth-child(3) {
-    bottom: 0px;
-    transform-origin: right;
-}
-.seasonSectionRowItemBorder > div:nth-child(4) {
-    left: 0px;
-    transform-origin: bottom;
-}
-.seasonSectionRowItem:hover > .seasonSectionRowItemBorder > div,
-.seasonSectionRowItemSelected > .seasonSectionRowItemBorder > div {
+.seasonSectionItem:hover > .seasonSectionItemBorder > div,
+.seasonSectionItemSelected > .seasonSectionItemBorder > div {
     transform: rotateY(0deg) rotateX(0deg);
 }
 
 
-.seasonSectionRowItemBK {
+.seasonSectionItemBK {
     position: absolute;
     top: -10px;
     left: -10px;
@@ -187,13 +165,13 @@ rgb(0, 119, 200);
     transition-duration: 400ms;
     transform: scale(1.5);
 }
-.seasonSectionRowItemBKCover {
+.seasonSectionItemBKCover {
     height: 100%;
     width: 100%;
     transition-duration: 400ms;
 }
 
-.seasonSectionRowItemNameBanner {
+.seasonSectionItemNameBanner {
     width: calc(100% - 20px);
     padding: 10px;
     transition-duration: 250ms;
@@ -202,33 +180,21 @@ rgb(0, 119, 200);
     display: inline-block;
     position: relative;
 }
-.seasonSectionRowItemName {
+.seasonSectionItemName {
     display: inline-block;
     transition-duration: 250ms;
 }
-.seasonSectionRowItemName > hr {
+.seasonSectionItemName > hr {
     transform: rotateY(90deg);
     transition-duration: 400ms;
 }
 
-.seasonSectionRowItem:hover > .seasonSectionRowItemNameBanner > .seasonSectionRowItemName > hr,
-.seasonSectionRowItemSelected > .seasonSectionRowItemNameBanner > .seasonSectionRowItemName > hr {
+.seasonSectionItem:hover > .seasonSectionItemNameBanner > .seasonSectionItemName > hr,
+.seasonSectionItemSelected > .seasonSectionItemNameBanner > .seasonSectionItemName > hr {
     transform: rotateY(0deg);
 }
 /*Media queries for different sizes below*/
 
-@media screen and (max-width: 1700px) {
-    .seasonPreview > img {
-        max-width: 300px;
-    }
-    .seasonSections {
-        padding-left: 10px;
-    }
-    .seasonSectionRowItem {
-        height: calc(100% - calc(20px + 10px));
-        margin: 10px 5px 10px 5px;
-    }
-}
 @media screen and (max-width: 1300px) {
     .seasonContent {
         display: block;
@@ -241,28 +207,24 @@ rgb(0, 119, 200);
     .seasonPreview:nth-child(3) {
         left: -20px;
     }
-    .seasonSectionRowItemBK {
+    .seasonSections {
+        padding-right: 0px;
+        width: 100%;
+    }
+    .seasonSectionItemBK {
         filter: none !important;
     }
-    .seasonSectionRowItem {
-        height: calc(100% - calc(0px + 10px));
+    .seasonSectionItem {
         padding: 0px;
         margin: 5px;
+        min-width: calc(50% - 10px);
     }
-    .seasonSectionRowItemNameBanner {
+    .seasonSectionItemNameBanner {
         padding: 15px;
         width: calc(100% - 30px);
         border-radius: 0px;
     }
-    .seasonSectionRowItemSelected {
+    .seasonSectionItemSelected {
         transform: scale(.95) translate3d(0px, 0px, 0px) !important;
-    }
-}
-@media screen and (max-width: 900px) {
-    .seasonSectionRow {
-        display: block;
-    }
-    .seasonSectionRowItem {
-        margin: 10px;
     }
 }

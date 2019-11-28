@@ -18,7 +18,7 @@
             var pageName = "2019 North Yearbook";
             var distanceFromHome = "";
             var randomImages = [
-                "media/background1.jpg"
+                "media/background1.jpg",
             ]
         </script>
     </head>
@@ -101,7 +101,7 @@
                     <div class="menuPrimeBtns">
                         
                         <button class="mainButton menuButton"
-                                data-pagefromroot=""
+                                data-pagefromroot="html/freshmen.html"
                                 onclick=LinkViaBtn(this.id)
                                 id="menuItemFre">
                             <div class="buttonBorder">
@@ -116,7 +116,7 @@
                         </button>
                         
                         <button class="mainButton menuButton"
-                                data-pagefromroot=""
+                                data-pagefromroot="html/sophomores.html"
                                 onclick=LinkViaBtn(this.id)
                                 id="menuItemSop">
                             <div class="buttonBorder">
@@ -131,7 +131,7 @@
                         </button>
                         
                         <button class="mainButton menuButton"
-                                data-pagefromroot=""
+                                data-pagefromroot="html/juniors.html"
                                 onclick=LinkViaBtn(this.id)
                                 id="menuItemJun">
                             <div class="buttonBorder">
@@ -146,7 +146,7 @@
                         </button>
                         
                         <button class="mainButton menuButton"
-                                data-pagefromroot=""
+                                data-pagefromroot="html/seniors.html"
                                 onclick=LinkViaBtn(this.id)
                                 id="menuItemSen">
                             <div class="buttonBorder">
@@ -161,7 +161,7 @@
                         </button>
                         
                         <button class="mainButton menuButton"
-                                data-pagefromroot=""
+                                data-pagefromroot="html/staff.html"
                                 onclick=LinkViaBtn(this.id)
                                 id="menuItemSta">
                             <div class="buttonBorder">
@@ -174,6 +174,7 @@
                                 Staff
                             </div>
                         </button>
+                    
                     </div>
                 </div>            
                 
@@ -210,6 +211,7 @@
             </button>
             
             <br/>
+            
             <div class="season" id="season_fall">
                 <div class="seasonTitle">
                     <span class="seasonTitleText">Fall</span>
@@ -218,10 +220,10 @@
                     <div class="seasonPreviews">
                         <!--must randomly assign preview 1 and 2-->
                         <div class="seasonPreview">
-                            <img src="media/testing/1_small.jpg"/>
+                            <img src="media/pages/17_small.jpg"/>
                             <div class="seasonPreviewBtns">
                                 <button class="seasonPreviewBtn mainButton" id="fallPreviewView"
-                                        data-pagefromroot="media/testing/1_small.jpg"
+                                        data-pagefromroot="media/pages/17.jpg"
                                         onclick="LinkViaBtn(this.id)">
                                     <div class="buttonBorder">
                                         <div></div>
@@ -243,111 +245,106 @@
                         </div>
                     </div>
                     <div class="seasonSections">
-                        <div class="seasonSectionRow">
-                            <div class="seasonSectionRowItem"
-                                 data-pagefromroot=""
-                                 onclick="LinkViaBtn(this.id)"
-                                 id="fallItem11">
-                                <div class="buttonBorder seasonSectionRowItemBorder">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <div class="seasonSectionRowItemBK" id="fallItem11Bk">
-                                    <div class="seasonSectionRowItemBKCover"></div>
-                                </div>
-                                <div class="seasonSectionRowItemNameBanner">
-                                    <div class="seasonSectionRowItemName">
-                                        Fall Sports
-                                        <hr/>
-                                    </div>
+                        <div class="seasonSectionItem"
+                             data-pagefromroot="html/fall/activities.html"
+                             onclick="LinkViaBtn(this.id)"
+                             id="fallItemA">
+                            <div class="buttonBorder seasonSectionItemBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="seasonSectionItemBK" id="fallItemABk">
+                                <div class="seasonSectionItemBKCover"></div>
+                            </div>
+                            <div class="seasonSectionItemNameBanner">
+                                <div class="seasonSectionItemName">
+                                    Fall Activities
+                                    <hr/>
                                 </div>
                             </div>
-                            
-                            <div class="seasonSectionRowItem"
-                                 data-pagefromroot=""
-                                 onclick="LinkViaBtn(this.id)"
-                                 id="fallItem12">
-                                <div class="buttonBorder seasonSectionRowItemBorder">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <div class="seasonSectionRowItemBK" id="fallItem12Bk">
-                                    <div class="seasonSectionRowItemBKCover"></div>
-                                </div>
-                                <div class="seasonSectionRowItemNameBanner">
-                                    <div class="seasonSectionRowItemName">
-                                        Portraits
-                                        <hr/>
-                                    </div>
-                                </div>
-                            </div>
-                            
                         </div>
-                        <div class="seasonSectionRow">
-                            <div class="seasonSectionRowItem"
-                                 data-pagefromroot=""
-                                 onclick="LinkViaBtn(this.id)"
-                                 id="fallItem21">
-                                <div class="buttonBorder seasonSectionRowItemBorder">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <div class="seasonSectionRowItemBK" id="fallItem21Bk">
-                                    <div class="seasonSectionRowItemBKCover"></div>
-                                </div>
-                                <div class="seasonSectionRowItemNameBanner">
-                                    <div class="seasonSectionRowItemName">
-                                        Student Life
-                                        <hr/>
-                                    </div>
+
+                        <div class="seasonSectionItem"
+                             data-pagefromroot="html/fall/humans.html"
+                             onclick="LinkViaBtn(this.id)"
+                             id="fallItemP">
+                            <div class="buttonBorder seasonSectionItemBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="seasonSectionItemBK" id="fallItemPBk">
+                                <div class="seasonSectionItemBKCover"></div>
+                            </div>
+                            <div class="seasonSectionItemNameBanner">
+                                <div class="seasonSectionItemName">
+                                    Portraits
+                                    <hr/>
                                 </div>
                             </div>
-                            
-                            <div class="seasonSectionRowItem"
-                                 data-pagefromroot=""
-                                 onclick="LinkViaBtn(this.id)"
-                                 id="fallItem22">
-                                <div class="buttonBorder seasonSectionRowItemBorder">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <div class="seasonSectionRowItemBK" id="fallItem22Bk">
-                                    <div class="seasonSectionRowItemBKCover"></div>
-                                </div>
-                                <div class="seasonSectionRowItemNameBanner">
-                                    <div class="seasonSectionRowItemName">
-                                        Homecoming
-                                        <hr/>
-                                    </div>
+                        </div>
+                        <div class="seasonSectionItem"
+                             data-pagefromroot="html/fall/life.html"
+                             onclick="LinkViaBtn(this.id)"
+                             id="fallItemSL">
+                            <div class="buttonBorder seasonSectionItemBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="seasonSectionItemBK" id="fallItemSLBk">
+                                <div class="seasonSectionItemBKCover"></div>
+                            </div>
+                            <div class="seasonSectionItemNameBanner">
+                                <div class="seasonSectionItemName">
+                                    Student Life
+                                    <hr/>
                                 </div>
                             </div>
-                            
-                            <div class="seasonSectionRowItem"
-                                 data-pagefromroot=""
-                                 onclick="LinkViaBtn(this.id)"
-                                 id="fallItem23">
-                                <div class="buttonBorder seasonSectionRowItemBorder">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
+                        </div>
+
+                        <div class="seasonSectionItem"
+                             data-pagefromroot="html/fall/dance.html"
+                             onclick="LinkViaBtn(this.id)"
+                             id="fallItemDNC">
+                            <div class="buttonBorder seasonSectionItemBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="seasonSectionItemBK" id="fallItemDNCBk">
+                                <div class="seasonSectionItemBKCover"></div>
+                            </div>
+                            <div class="seasonSectionItemNameBanner">
+                                <div class="seasonSectionItemName">
+                                    Homecoming
+                                    <hr/>
                                 </div>
-                                <div class="seasonSectionRowItemBK" id="fallItem23Bk">
-                                    <div class="seasonSectionRowItemBKCover"></div>
-                                </div>
-                                <div class="seasonSectionRowItemNameBanner">
-                                    <div class="seasonSectionRowItemName">
-                                        Group Photos
-                                        <hr/>
-                                    </div>
+                            </div>
+                        </div>
+
+                        <div class="seasonSectionItem"
+                             data-pagefromroot="html/fall/group.html"
+                             onclick="LinkViaBtn(this.id)"
+                             id="fallItemGP">
+                            <div class="buttonBorder seasonSectionItemBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="seasonSectionItemBK" id="fallItemGPBk">
+                                <div class="seasonSectionItemBKCover"></div>
+                            </div>
+                            <div class="seasonSectionItemNameBanner">
+                                <div class="seasonSectionItemName">
+                                    Group Photos
+                                    <hr/>
                                 </div>
                             </div>
                         </div>
@@ -355,25 +352,246 @@
                 </div>
             </div>
             
-            <!--Insert more content here-->
+            <div class="season" id="season_winter">
+                <div class="seasonTitle">
+                    <span class="seasonTitleText">Winter</span>
+                </div>
+                <div class="seasonContent">
+                    <div class="seasonPreviews">
+                        <!--must randomly assign preview 1 and 2-->
+                        <div class="seasonPreview">
+                            <img src="media/pages/109_small.jpg"/>
+                            <div class="seasonPreviewBtns">
+                                <button class="seasonPreviewBtn mainButton" id="winterPreviewView"
+                                        data-pagefromroot="media/pages/109.jpg"
+                                        onclick="LinkViaBtn(this.id)">
+                                    <div class="buttonBorder">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                    <div class="buttonContent">
+                                        View Image
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="seasonPreview">
+                            <img id="winterPreview1"/>
+                        </div>
+                        <div class="seasonPreview">
+                            <img id="winterPreview2"/>
+                        </div>
+                    </div>
+                    <div class="seasonSections">
+                        <div class="seasonSectionItem"
+                             data-pagefromroot="html/winter/activities.html"
+                             onclick="LinkViaBtn(this.id)"
+                             id="winItemA">
+                            <div class="buttonBorder seasonSectionItemBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="seasonSectionItemBK" id="winItemABk">
+                                <div class="seasonSectionItemBKCover"></div>
+                            </div>
+                            <div class="seasonSectionItemNameBanner">
+                                <div class="seasonSectionItemName">
+                                    Winter Activities
+                                    <hr/>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="seasonSectionItem"
+                             data-pagefromroot="html/winter/life.html"
+                             onclick="LinkViaBtn(this.id)"
+                             id="winItemSL">
+                            <div class="buttonBorder seasonSectionItemBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="seasonSectionItemBK" id="winItemSLBk">
+                                <div class="seasonSectionItemBKCover"></div>
+                            </div>
+                            <div class="seasonSectionItemNameBanner">
+                                <div class="seasonSectionItemName">
+                                    Student Life
+                                    <hr/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="seasonSectionItem"
+                             data-pagefromroot="html/winter/dance.html"
+                             onclick="LinkViaBtn(this.id)"
+                             id="winItemDNC">
+                            <div class="buttonBorder seasonSectionItemBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="seasonSectionItemBK" id="winItemDNCBk">
+                                <div class="seasonSectionItemBKCover"></div>
+                            </div>
+                            <div class="seasonSectionItemNameBanner">
+                                <div class="seasonSectionItemName">
+                                    Winter Dances
+                                    <hr/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="seasonSectionItem"
+                             data-pagefromroot="html/winter/group.html"
+                             onclick="LinkViaBtn(this.id)"
+                             id="winItemGP">
+                            <div class="buttonBorder seasonSectionItemBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="seasonSectionItemBK" id="winItemGPBk">
+                                <div class="seasonSectionItemBKCover"></div>
+                            </div>
+                            <div class="seasonSectionItemNameBanner">
+                                <div class="seasonSectionItemName">
+                                    Group Photos
+                                    <hr/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="season" id="season_spring">
+                <div class="seasonTitle">
+                    <span class="seasonTitleText">Spring</span>
+                </div>
+                <div class="seasonContent">
+                    <div class="seasonPreviews">
+                        <!--must randomly assign preview 1 and 2-->
+                        <div class="seasonPreview">
+                            <img src="media/pages/141_small.jpg"/>
+                            <div class="seasonPreviewBtns">
+                                <button class="seasonPreviewBtn mainButton" id="springPreviewView"
+                                        data-pagefromroot="media/pages/141.jpg"
+                                        onclick="LinkViaBtn(this.id)">
+                                    <div class="buttonBorder">
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                        <div></div>
+                                    </div>
+                                    <div class="buttonContent">
+                                        View Image
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="seasonPreview">
+                            <img id="springPreview1"/>
+                        </div>
+                        <div class="seasonPreview">
+                            <img id="springPreview2"/>
+                        </div>
+                    </div>
+                    <div class="seasonSections">
+                        <div class="seasonSectionItem"
+                             data-pagefromroot="html/spring/activities.html"
+                             onclick="LinkViaBtn(this.id)"
+                             id="sprItemA">
+                            <div class="buttonBorder seasonSectionItemBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="seasonSectionItemBK" id="sprItemABk">
+                                <div class="seasonSectionItemBKCover"></div>
+                            </div>
+                            <div class="seasonSectionItemNameBanner">
+                                <div class="seasonSectionItemName">
+                                    Spring Activities
+                                    <hr/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="seasonSectionItem"
+                             data-pagefromroot="html/spring/life.html"
+                             onclick="LinkViaBtn(this.id)"
+                             id="sprItemSL">
+                            <div class="buttonBorder seasonSectionItemBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="seasonSectionItemBK" id="sprItemSLBk">
+                                <div class="seasonSectionItemBKCover"></div>
+                            </div>
+                            <div class="seasonSectionItemNameBanner">
+                                <div class="seasonSectionItemName">
+                                    Student Life
+                                    <hr/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="seasonSectionItem"
+                             data-pagefromroot="html/spring/dance.html"
+                             onclick="LinkViaBtn(this.id)"
+                             id="sprItemDNC">
+                            <div class="buttonBorder seasonSectionItemBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="seasonSectionItemBK" id="sprItemDNCBk">
+                                <div class="seasonSectionItemBKCover"></div>
+                            </div>
+                            <div class="seasonSectionItemNameBanner">
+                                <div class="seasonSectionItemName">
+                                    Prom
+                                    <hr/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="seasonSectionItem"
+                             data-pagefromroot="html/spring/group.html"
+                             onclick="LinkViaBtn(this.id)"
+                             id="sprItemGP">
+                            <div class="buttonBorder seasonSectionItemBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="seasonSectionItemBK" id="sprItemGPBk">
+                                <div class="seasonSectionItemBKCover"></div>
+                            </div>
+                            <div class="seasonSectionItemNameBanner">
+                                <div class="seasonSectionItemName">
+                                    Group Photos
+                                    <hr/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
         </div>
     </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
