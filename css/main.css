@@ -210,3 +210,14 @@ hr {
         font-size: 25px !important;
     }
 }
+@media screen and (max-width: 600px) {
+    .season {
+        width: calc(100% - 20px);
+    }
+    .seasonPreview:nth-child(1) > img {
+        width: calc(100% - 10px);
+    }
+    .seasonPreview:nth-child(2), .seasonPreview:nth-child(3) {
+        display: none;
+    }
+}
