@@ -8,7 +8,6 @@ html, body {
     scroll-behavior: smooth;
 }
 * {
-    transition: 750ms ease-in-out;
     font-family: 'Lato', sans-serif; /*Navigation*/
     font-family: "Quicksand", sans-serif; /*Main*/
 }
@@ -53,6 +52,7 @@ a, a:visited {
     position: absolute;
     top: 0px;
     pointer-events: none;
+    z-index: 1;
 }
 .buttonBorder > div {
     position: absolute;
@@ -200,9 +200,20 @@ a, a:visited {
     font-size: 0px;
     margin-bottom: 75px;
 }
+.submittedImgs {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
 .ybButton {
     margin: 10px;
     background-color: transparent;
+    
+}
+.ybButtonSubmitted {
+    width: 500px;
+    max-width: calc(100% - 20px);
 }
 .ybImgCover {
     position: absolute;
@@ -211,6 +222,14 @@ a, a:visited {
     height: 100%;
     width: 100%;
     pointer-events: none;
+}
+.ybImgInfoBar {
+    position: relative;
+    width: calc(100% - 20px);
+    font-size: 17px;
+    text-align: left;
+    padding: 10px;
+    text-transform: capitalize;
 }
 .ybButton > .buttonBorder > div:nth-child(2n+1) {
     height: 5px;

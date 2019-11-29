@@ -1,5 +1,9 @@
 window.addEventListener("load", function(){
     loadPage()
+    if (getCookie("theme") == "") {
+        setCookie("theme", "dark", 360);
+    }
+    setTheme(getCookie("theme"));
 })
 window.addEventListener("resize", function(){
     setTopContBox()
@@ -33,22 +37,25 @@ function setTopContBox() {
     topConBx.style.top = navBarHeight + "px"
     topConBx.style.height = "calc(100% - " + navBarHeight + "px)"
 }
-var currentTheme = "dark"
+
 var shortBtnDelay = 250;
 function toggleTheme() {
-    var ele = document.getElementById("cssTheme");
     var newTheme;
     togClassDelay("cssThemeTog", "buttonSelected", shortBtnDelay)
-    if (currentTheme == "light") {
+    if (getCookie("theme") == "light") {
         newTheme = "dark";
     }
-    else if (currentTheme == "dark") {
+    else if (getCookie("theme") == "dark") {
         newTheme = "light";
     }
-    currentTheme = newTheme;
     setTimeout(function(){
-        ele.href = distanceFromHome + "css/" + newTheme + ".css";
+        setTheme(newTheme)
     }, shortBtnDelay)
+}
+function setTheme(theme) {
+    var ele = document.getElementById("cssTheme");
+    ele.href = distanceFromHome + "css/" + theme + ".css";
+    setCookie("theme", theme, 360);
 }
 function backToTop(btnID) {
     var ele = document.getElementById(btnID);
@@ -128,8 +135,11 @@ function toggleMenu(eleID) {
 
 
 function loadYBPages(firstPage, lastPage) {
+    loadImages("media/pages/", firstPage, lastPage, "_small.jpg")
+}
+function loadImages(pathFromRoot, first, last, suffix) {
     var root = document.getElementById("ybImgs");
-    for (i=firstPage; i <= lastPage; i++) {
+    for (i=first; i <= last; i++) {
         var wrapper = document.createElement("button"),
             borderWrapper = document.createElement("div"),
             b1 = document.createElement("div"),
@@ -139,12 +149,12 @@ function loadYBPages(firstPage, lastPage) {
             cover = document.createElement("div"),
             contentWrapper = document.createElement("div"),
             ybImg = document.createElement("img"),
-            ybImgPath = distanceFromHome + "media/pages/";
+            ybImgPath = distanceFromHome + pathFromRoot;
         
         wrapper.setAttribute("class", "mainButton ybButton");
         wrapper.setAttribute("id", "ybImage" + i);
         wrapper.setAttribute("onclick", "LinkViaImg(this.id)");
-        wrapper.setAttribute("data-pagefromroot", "media/pages/" + i + ".jpg");
+        wrapper.setAttribute("data-pagefromroot", pathFromRoot + i + ".jpg");
         
         borderWrapper.setAttribute("class", "buttonBorder");
             
@@ -153,15 +163,68 @@ function loadYBPages(firstPage, lastPage) {
         contentWrapper.setAttribute("class", "buttonContent");
         
         ybImg.setAttribute("class", "ybImg");
-        ybImg.setAttribute("src", ybImgPath + i + "_small.jpg");
+        ybImg.setAttribute("src", ybImgPath + i + suffix);
         
+        
+        if (pathFromRoot == "media/submitted/student/") {
+            // add overlay information on cover
+            var infoBar = document.createElement("div"),
+                imageData = submittedMetadata[i],
+                information = "",
+                imageNote = imageData["notes"],
+                imageNames = imageData["names"],
+                imageEvents = imageData["event"],
+                imageEvent = "";
+            
+            wrapper.classList.add("ybButtonSubmitted");
+            
+            infoBar.setAttribute("class", "ybImgInfoBar")
+            if (imageNote == "") {
+                imageNote = "Submitted by: Unknown"
+            }
+            information = information.concat(imageNote, "<br/><br/>");
+            
+            
+            for (k=0; k < imageNames.length; k++) {
+                // looping through rows
+                information = information.concat("Row ", k+1, ": ")
+                for (l=0; l < imageNames[k].length; l++) {
+                    information = information.concat(imageNames[k][l][0], " ", imageNames[k][l][1], ", ")
+                }
+                information = information.concat("<br/><br/>")
+            }
+            
+            
+            
+            if (imageEvents[1].toLowerCase() != "unknown") {
+                imageEvent = imageEvents[1];
+            } else if (imageEvents[0].toLowerCase() != "unknown") {
+                imageEvent = imageEvents[0];
+            }
+            
+            
+            if (imageEvent != "") {
+                information = information.concat("Event: ", imageEvent, "<br/>")
+            }
+            if (imageData["date"].toLowerCase() != "unknown") {
+                information = information.concat("Date: ", imageData["date"], "<br/>")
+            }
+            
+            infoBar.innerHTML = information;
+        }
+        
+        contentWrapper.appendChild(ybImg);
+        
+        if (pathFromRoot == "media/submitted/student/") {
+            contentWrapper.appendChild(infoBar);
+        }
         
         borderWrapper.appendChild(b1);
         borderWrapper.appendChild(b2);
         borderWrapper.appendChild(b3);
         borderWrapper.appendChild(b4);
         
-        contentWrapper.appendChild(ybImg);
+        
         
         wrapper.appendChild(cover);
         
@@ -174,8 +237,27 @@ function loadYBPages(firstPage, lastPage) {
 }
 
 
-
-
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
+}
 
 
 

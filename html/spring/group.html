@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>2019 North Yearbook</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="theme-color" content="#0077c8">
+        
+        
+        <link rel="stylesheet" href="../../css/main.css">
+        <link rel="stylesheet" href="../../css/dark.css" id="cssTheme">
+        <link rel="icon" href="../../media/icon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Lato|Quicksand&amp;display=swap" rel="stylesheet">
+        
+        <script src="../../js/main.js"></script>
+        <script>
+            var pageName = "Spring Group Photos";
+            var distanceFromHome = "../../";
+            window.addEventListener("load", function(){
+                loadYBPages(154, 159);
+            });
+        </script>
+    </head>
+    <body>
+               
+        <button class="mainButton"
+                style="position: fixed; bottom: 25px; left: 25px; z-index: 10;"
+                onclick="toggleTheme()"
+                id="cssThemeTog">
+            <div class="buttonBorder">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="buttonContent">
+                Toggle Theme
+            </div>
+        </button>
+        
+        <button class="mainButton"
+                style="position: fixed; bottom: 25px; right: 25px; z-index: 10;"
+                onclick="backToTop(this.id)"
+                id="backToTop">
+            <div class="buttonBorder">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="buttonContent">
+                Back to Top
+            </div>
+        </button>
+        
+        <div class="top">
+            <div class="topImg" id="topImg" style=""></div>
+            <div class="navBar" id="navBar">
+                
+                
+                <div class="navBarContent">
+                    <img src="../../media/husky.png" style="height: 55px;"/>
+                    <button class="mainButton"
+                            id="gotoHomeBtn"
+                            onclick="goHome(this.id)">
+                        <div class="buttonBorder">
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                            <div></div>
+                        </div>
+                        <div class="buttonContent">
+                            Home
+                        </div>
+                    </button>
+                    <span id="homeTitle">
+                        2019 North Yearbook
+                    </span>
+                </div>
+                
+                <button class="mainButton"
+                    id="navBarMenuToggle"
+                    onclick="toggleMenu(this.id)">
+                    <div class="buttonBorder">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div class="buttonContent">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </button>
+                
+                <div class="cover" id="cover" onclick="toggleMenu(this.id)"></div>
+                <div class="menu" id="menu">
+                    <div class="menuPrimeBtns">
+                        
+                        <button class="mainButton menuButton"
+                                data-pagefromroot="html/freshmen.html"
+                                onclick=LinkViaBtn(this.id)
+                                id="menuItemFre">
+                            <div class="buttonBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="buttonContent">
+                                Freshmen
+                            </div>
+                        </button>
+                        
+                        <button class="mainButton menuButton"
+                                data-pagefromroot="html/sophomores.html"
+                                onclick=LinkViaBtn(this.id)
+                                id="menuItemSop">
+                            <div class="buttonBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="buttonContent">
+                                Sophomores
+                            </div>
+                        </button>
+                        
+                        <button class="mainButton menuButton"
+                                data-pagefromroot="html/juniors.html"
+                                onclick=LinkViaBtn(this.id)
+                                id="menuItemJun">
+                            <div class="buttonBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="buttonContent">
+                                Juniors
+                            </div>
+                        </button>
+                        
+                        <button class="mainButton menuButton"
+                                data-pagefromroot="html/seniors.html"
+                                onclick=LinkViaBtn(this.id)
+                                id="menuItemSen">
+                            <div class="buttonBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="buttonContent">
+                                Seniors
+                            </div>
+                        </button>
+                        
+                        <button class="mainButton menuButton"
+                                data-pagefromroot="html/staff.html"
+                                onclick=LinkViaBtn(this.id)
+                                id="menuItemSta">
+                            <div class="buttonBorder">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                            <div class="buttonContent">
+                                Staff
+                            </div>
+                        </button>
+                    
+                    </div>
+                </div>            
+                
+            </div>
+            
+            <div class="topContentBox" id="topContentBox">
+                <div class="topText" id="topTextCont">
+                    <span id="topText"></span>
+                </div>
+            </div>
+            
+            
+        </div>
+        
+        <div class="content">
+            <button class="mainButton searchButton"
+                    id="searh_button"
+                    onclick="LinkViaBtn(this.id)"
+                    data-pagefromroot="html/search.html">
+                <div class="buttonBorder">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <div class="buttonContent">
+                    Find Someone
+                </div>
+            </button>
+            
+            <br/>
+            
+            <div class="ybImgs" id="ybImgs">
+                
+            </div>
+        </div>
+    </body>
+</html>

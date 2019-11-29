@@ -60,8 +60,11 @@ hr {
 .seasonSectionItem {
     box-shadow: 0px 0px 25px -5px rgb(25, 25, 25);
 }
-.seasonSectionItem:hover, .seasonSectionItemSelected {
+.seasonSectionItem:hover {
     box-shadow: 0px 0px 15px 0px rgb(25, 25, 25);
+}
+.seasonSectionItem.buttonSelected {
+    box-shadow: 0px 0px 5px 0px rgb(25, 25, 25);
 }
 .seasonSectionItemBorder > div {
     background-color: rgb(0, 119, 200);
@@ -86,6 +89,11 @@ hr {
 
 .ybImgCover {
     background-color: rgba(25, 25, 25, .3);
+}
+.ybImgInfoBar {
+    background-color: rgba(25, 25, 25, .25);
+    color: rgb(200, 200, 200);
+    box-shadow: 0px -5px 10px -5px rgb(25, 25, 25);
 }
 
 @media screen and (max-width: 1000px) {
