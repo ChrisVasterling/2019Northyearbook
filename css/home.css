@@ -2,9 +2,6 @@
 rgb(0, 119, 200);
 
 */
-.top {
-    height: 80vh !important;
-}
 #homeTitle {
     display: inline-block !important;
     font-size: 35px;
@@ -12,6 +9,8 @@ rgb(0, 119, 200);
 #gotoHomeBtn {
     display: none !important;
 }
+
+
 .season {
     display: inline-block;
     text-align: left;
@@ -25,6 +24,12 @@ rgb(0, 119, 200);
 .seasonTitle > span {
     margin-left: 25px;
 }
+.ybCoverBox {
+    margin: 0px;
+    width: auto !important;
+    max-width: 90%;
+}
+
 
 .seasonContent {
     margin-top: 5px;
