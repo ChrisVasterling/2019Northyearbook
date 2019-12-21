@@ -181,6 +181,7 @@ a, a:visited {
 .searchButton {
     margin: 25px;
     display: inline-block;
+    display: none;
 }
 .searchButton > .buttonContent {
     font-size: 20px;
@@ -189,6 +190,7 @@ a, a:visited {
 .content {
     text-align: center;
     font-size: 0px;
+    margin-top: 30px;
 }
 
 .ybImgs {
