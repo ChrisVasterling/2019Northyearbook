@@ -20,9 +20,14 @@ rgb(0, 119, 200);
 .seasonTitle {
     font-size: 40px;
     font-family: "Quicksand", sans-serif;
+    text-align: center;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .seasonTitle > span {
-    margin-left: 25px;
+    padding: 0px 15px 0px 15px;
 }
 .ybCoverBox {
     margin: 0px;
@@ -32,8 +37,9 @@ rgb(0, 119, 200);
 
 
 .seasonContent {
-    margin-top: 5px;
+    margin-top: -25px;
     padding: 10px;
+    padding-top: 20px;
     border-radius: 25px;
     display: flex;
     text-align: center;
@@ -42,62 +48,31 @@ rgb(0, 119, 200);
 .season:nth-child(2n) > .seasonContent {
     flex-direction: row-reverse;
 }
+.season:nth-child(2n) > .seasonContent > .seasonPreviews {
+    padding: 10px 10px 10px 0px;
+}
+.season:nth-child(2n) > .seasonContent > .seasonSections {
+    padding-right: 0px;
+}
+.season:nth-child(2n+1) > .seasonContent > .seasonSections {
+    padding-left: 0px;
+}
 .seasonPreviews {
-    position: relative;
-    display: inline-block;
-}
-.seasonPreview {
-    font-size: 0px;
-    display: inline-block;
-    border-radius: 15px;
-    overflow: hidden;
-    transform-origin: center left;
-}
-.seasonPreview::before {
-    content: "";
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    height: 100%;
-    width: 100%;
-    transition: 750ms ease-in-out;
-}
-.seasonPreview:nth-child(1) {
-    z-index: 3;
-    position: relative;
-}
-.seasonPreview:nth-child(2) {
-    position: absolute;
-    left: -10px;
-    opacity: .8;
-    z-index: 2;
-    transform: scale(.95);
-}
-.seasonPreview:nth-child(3) {
-    position: absolute;
-    left: -20px;
-    opacity: .6;
-    z-index: 1;
-    transform: scale(.85);
-}
-.seasonPreview > img {
-    max-width: 350px;
-}
-.seasonPreviewBtns {
-    position: absolute;
-    bottom: 0px;
-    width: calc(100% - 10px);
-    padding: 5px;
-    text-align: center;
+    display: flex;
+    padding: 10px 0px 10px 10px;
+    justify-content: center;
 }
 .seasonPreviewBtn {
-    margin: 0px 5px 0px 5px;
+    align-self: center;
+    max-width: auto;
+}
+.seasonPreviewBtn > .buttonContent > .ybImg {
+    max-height: none;
 }
 .seasonSections {
     font-size: 0px;
     width: calc(100% - 10px);
     padding: 10px;
-    padding-left: 0px;
     display: flex;
     flex-wrap: wrap;
     text-align: center;
@@ -203,11 +178,19 @@ rgb(0, 119, 200);
 /*Media queries for different sizes below*/
 
 @media screen and (max-width: 1300px) {
+    .seasonPreviews {
+        padding: 0px;
+    }
+    .seasonPreviewBtn > .buttonContent > .ybImg {
+        max-height: 400px;
+    }
     .seasonContent {
         display: block;
     }
     .seasonSections {
+        padding-top: 0px;
         padding-right: 0px;
+        padding-left: 0px;
         width: 100%;
     }
     .seasonSectionItemBK {
